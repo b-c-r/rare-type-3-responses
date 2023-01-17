@@ -7,6 +7,7 @@
 
 # User-specific files
 .Ruserdata
+*.Rproj
 
 # Example code in package build process
 *-Ex.R
@@ -37,3 +38,11 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Output Files
+*.pdf
+*.html
+*.jpeg
+*.jpg
+*.png
+*.svg

@@ -23,13 +23,13 @@
 # et al. (under review) for further methodology description.
 #
 # Arguments:
-# a:   the allometric constant (default = 0.2227; see Otto et al. 2008)
-# b:   the allometric exponent (default = -0.25; see Otto et al. 2008)
-# e:   the assimilation efficiency (default = 0.85; see Otto et al. 2008)
-# y:   the relative maximum feeding rate (default = 8; see Otto et al. 2008)
-# N0:  the half saturation rate (default = 0.5; see Otto et al. 2008)
-# q:   the shaping exponent (default = 0; see Williams and Martinez 2004)
-# bmr: the body mass ratio (default = 100; see Otto et al. 2008)
+# a:  the allometric constant (default = 0.2227; see Otto et al. 2008)
+# b:  the allometric exponent (default = -0.25; see Otto et al. 2008)
+# e:  the assimilation efficiency (default = 0.85; see Otto et al. 2008)
+# y:  the relative maximum feeding rate (default = 8; see Otto et al. 2008)
+# N0: the half saturation rate (default = 0.5; see Otto et al. 2008)
+# q:  the shaping exponent (default = 0; see Williams and Martinez 2004)
+# R:  the body mass ratio (default = 100; see Otto et al. 2008)
 # 
 # Requirements:
 # Compilation of the food chain model (run compile_foodchain())
@@ -48,13 +48,13 @@ set_foodchain_parms <- function(a = 0.2227,
                                 y = 8,
                                 N0 = .5,
                                 q = 0,
-                                bmr = 100){
-  bmr2 <- bmr*bmr
-  chainC_set_params(m1 = a * bmr^b,
-                    m2 = a * bmr2^b,
+                                R = 100){
+  R2 <- R^2
+  chainC_set_params(m1 = a * R^b,
+                    m2 = a * R2^b,
                     e = e,
-                    fmax1 = y * a * bmr^b,
-                    fmax2 = y * a * bmr2^b,
+                    fmax1 = y * a * R^b,
+                    fmax2 = y * a * R2^b,
                     N0 = N0,
                     q = q)
 }

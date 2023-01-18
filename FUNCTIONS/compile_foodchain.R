@@ -1,5 +1,5 @@
 ################################################################################
-#    Function "compile_foodchain" to compile a 2-species food chain            #
+#    Function "compile_foodchain" to compile a 3-species food chain            #
 #    Copyright (C) 2023 Björn C. Rall                                          #
 #                                                                              #
 #    This program is free software: you can redistribute it and/or modify      #

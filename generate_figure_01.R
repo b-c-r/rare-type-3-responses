@@ -18,9 +18,15 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.    #
 ################################################################################
 
-## setup
+
+################################################################################
+## setup                                                                      ##
+################################################################################
+
+## housekeeping
 rm(list = ls())                                                                 # clean your workspace
 
+## load required packages
 library("odeintr")                                                              # load library odeintr (Keitt 2017) for compiling the model
 library("parallel")                                                             # for parallel computing
 library("foreach")                                                              # for parallel computing
@@ -34,9 +40,16 @@ for(i in 1:length(fnames)){
   source(paste(path, fnames[i], sep = ""))                                      # reads all source files
 }
 
+################################################################################
+## simulations for Figure 1E/F from Kalinkat et al. (under review)            ##
+################################################################################
+
 ## run the food chain simulations for the bifurcation diagram
 system.time({
-  run_foodchain_sim_mt()                                                        
+  run_foodchain_sim_mt(qrange = seq(0, .2, length = 501),                       # default: length = 2001
+                                               ts_length = 50000,                                       # default: 200000
+                                               steplength = 1,                                          # default: .5 
+                                               analyze_ts = 0.2)                                                        
 })
 # Note that executing this function is time expensive
 # I ran ~ 475sec (~8min) on a AMD 6900HS Creators Edition using 12/16 threads
@@ -48,5 +61,31 @@ system.time({
 #                        analyze_ts = 0.2)                                        # default: .05
 #})
 
+
+################################################################################
+## generate figure 01 with all 6 subplots from Kalinkat et al. (under review) ##
+################################################################################
+
+## pdf setup
+dir.create("FIG_OUT/")
+pdf(file = "FIG_OUT/Figure01.pdf",
+    width = 7,
+    height = 4.8,
+    title = "Figure 1: Rare Type III Responses")
+
+## Graphical settings
+par(mfrow = c(2,3),
+    oma = c(.1,.1,.1,.1),
+    mar = c(4,4,.5,.5),
+    las = 1)
+
 ## create the figure
-create_fig01E()
+create_fig01A(save_output = F)
+create_fig01B(save_output = F)
+create_fig01C(save_output = F)
+create_fig01D(save_output = F)
+create_fig01E(save_output = F)
+
+dev.off()
+
+

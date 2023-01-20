@@ -50,8 +50,17 @@ run_foodchain_sim <- function(qrange = seq(0, .2, length = 2000),
                               ts_length = 200000,
                               steplength = .5,
                               analyze_ts = 0.05,
-                              output_path = "SIM_OUT/"){
-  
+                              unique_out = F,
+                              max_out = 0,
+                              output_path = "SIM_OUT/",
+                              create.folder = T){
+  if(create.folder){
+    if(!dir.exists(output_path)){
+      dir.create(output_path)
+      warning("The output path does not exist - I'll create it for you.")
+    }
+  }
+
   ## setup empty vectors to collect bifurcation output
   Bx <- c()                                                                     # q-values for basal species
   By <- c()                                                                     # extrema for basal species
@@ -80,6 +89,27 @@ run_foodchain_sim <- function(qrange = seq(0, .2, length = 2000),
     Ii <- minmax(out[,3])
     Ti <- minmax(out[,4])
     
+    ## reduce to unique extrema
+    if(unique_out == T){
+      Bi <- unique(Bi)
+      Ii <- unique(Ii)
+      Ti <- unique(Ti)      
+    }
+    
+    ## reduce output data
+    if(max_out > 0){
+      if(length(Bi) > max_out){
+        Bi <- sample(Bi, max_out)
+      }
+      if(length(Ii) > max_out){
+        Ii <- sample(Ii, max_out)
+      }
+      if(length(Ti) > max_out){
+        Ti <- sample(Ti, max_out)
+      }
+    }
+    
+    
     ## add the results to the overall vectors
     By <- c(By, Bi)
     Iy <- c(Iy, Ii)
@@ -93,7 +123,7 @@ run_foodchain_sim <- function(qrange = seq(0, .2, length = 2000),
     # print(i)
   }
   
-  ## save results to harddrive
+  ## save results to hard-drive
   write.csv(
     list(Bx = Bx,
          By = By

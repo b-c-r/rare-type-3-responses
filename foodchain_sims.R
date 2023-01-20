@@ -39,7 +39,7 @@ system.time({
   run_foodchain_sim_mt()                                                        
 })
 # Note that executing this function is time expensive
-# I ran ~ 475sec (~8min) on a AMD 6900Hs Creators Edition using 12/16 threads
+# I ran ~ 475sec (~8min) on a AMD 6900HS Creators Edition using 12/16 threads
 # You may consider to run shorter time series and a coarser resolution:
 # system.time({
 #   run_foodchain_sim_mt(qrange = seq(0, .2, length = 501),                       # default: length = 2001

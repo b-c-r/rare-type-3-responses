@@ -20,7 +20,12 @@
 
 ## setup
 rm(list = ls())                                                                 # clean your workspace
-library("odeintr")                                                              # load library odeintr (Keitt 2017)
+
+library("odeintr")                                                              # load library odeintr (Keitt 2017) for compiling the model
+library("parallel")                                                             # for parallel computing
+library("foreach")                                                              # for parallel computing
+library("iterators")                                                            # for parallel computing
+library("doParallel")                                                           # for parallel computing
 
 ## load functions
 path <- "FUNCTIONS/"                                                            # path in which to find the functions
@@ -29,9 +34,19 @@ for(i in 1:length(fnames)){
   source(paste(path, fnames[i], sep = ""))                                      # reads all source files
 }
 
-## compile the food-chain model
-compile_foodchain()
+## run the food chain simulations for the bifurcation diagram
+system.time({
+  run_foodchain_sim_mt()                                                        
+})
+# Note that executing this function is time expensive
+# I ran ~ 475sec (~8min) on a AMD 6900Hs Creators Edition using 12/16 threads
+# You may consider to run shorter time series and a coarser resolution:
+# system.time({
+#   run_foodchain_sim_mt(qrange = seq(0, .2, length = 501),                       # default: length = 2001
+#                        ts_length = 50000,                                       # default: 200000
+#                        steplength = 1,                                          # default: .5 
+#                        analyze_ts = 0.2)                                        # default: .05
+#})
 
-## run the simulations for the bifurcation output
-run_foodchain_sim()
-
+## create the figure
+create_fig01E()

@@ -43,12 +43,13 @@ calc_gen_fr <- function(N = seq(0, 20, length=1000),
                         Theta = c(1, 1.25, 1.5, 2, 3)){
   
   out <- foreach::foreach(i = 1:length(Theta), .combine = cbind) %do% {
-    Fmax * N^theta[i] / (N0^Theta[i] + N^Theta[i])
+    Fmax * N^Theta[i] / (N0^Theta[i] + N^Theta[i])
   }
   
-  colnames(out) <- paste("Theta = ", Theta, sep ="")
+  out <- as.data.frame(cbind(N, out))
+  colnames(out) <- c("N", paste("Theta = ", Theta, sep =""))
   
-  return(as.data.frame(cbind(N, out)))
+  return(out)
 }
 
 

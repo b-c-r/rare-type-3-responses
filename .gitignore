@@ -47,3 +47,4 @@ vignettes/*.pdf
 *.png
 *.svg
 *.csv
+sessionInfo.txt

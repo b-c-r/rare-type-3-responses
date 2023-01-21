@@ -69,7 +69,7 @@ run_foodchain_sim_mt <- function(qrange = seq(0, .2, length = 2001),
   }
   
   qrange <- sample(qrange)
-  splits_q <- rep(round(length(qrange)/noC), noC-1)
+  splits_q <- rep(floor(length(qrange)/noC), noC-1)
   splits_q <- cumsum(splits_q)
   splits_q <- c(0, splits_q, (length(qrange)-max(splits_q))+max(splits_q))
   

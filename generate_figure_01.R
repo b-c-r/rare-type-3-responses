@@ -32,6 +32,7 @@ library("parallel")                                                             
 library("foreach")                                                              # for parallel computing
 library("iterators")                                                            # for parallel computing
 library("doParallel")                                                           # for parallel computing
+library("mgcv")                                                                 # for biodiversity analyses
 
 ## load functions
 path <- "FUNCTIONS/"                                                            # path in which to find the functions
@@ -46,20 +47,49 @@ for(i in 1:length(fnames)){
 
 ## run the food chain simulations for the bifurcation diagram
 system.time({
-  run_foodchain_sim_mt(qrange = seq(0, .2, length = 501),                       # default: length = 2001
-                                               ts_length = 50000,                                       # default: 200000
-                                               steplength = 1,                                          # default: .5 
-                                               analyze_ts = 0.2)                                                        
-})
-# Note that executing this function is time expensive
-# I ran ~ 475sec (~8min) on a AMD 6900HS Creators Edition using 12/16 threads
-# You may consider to run shorter time series and a coarser resolution:
-# system.time({
-#   run_foodchain_sim_mt(qrange = seq(0, .2, length = 501),                       # default: length = 2001
-#                        ts_length = 50000,                                       # default: 200000
-#                        steplength = 1,                                          # default: .5 
-#                        analyze_ts = 0.2)                                        # default: .05
-#})
+  run_foodchain_sim_mt(qrange = seq(0, .2, length = 1800),
+                       ts_length = 150000,
+                       steplength = .5,
+                       analyze_ts = 0.05,
+                       unique_out = T,
+                       max_out = 0,                                             # saves all extrema, leads to large out files (each >6MB)
+                       output_path = "SIM_OUT/",
+                       noC = 12)
+}) # ~ 4-5min with AMD Ryzen 6000 series laptop
+
+## run the food web simulations for the strong interactions biodiversity diagram
+system.time({
+  run_foodweb_sim_mt(qrange = seq(0, 4, length = 600),
+                     a = 0.2227,
+                     b = -0.25,
+                     e = 0.85,
+                     y = 8,
+                     N0 = .5,
+                     Rrange = c(10,100),
+                     ts_runs = 20,
+                     ts_run_length = 1000,
+                     steplength = .5,
+                     output_path = "SIM_OUT/",
+                     output_filename = "strong_interactions.csv",
+                     noC = 12)
+}) # ~ 10-11 min with AMD Ryzen 6000 series laptop
+
+## run the food web simulations for the weak interactions biodiversity diagram
+system.time({
+  run_foodweb_sim_mt(qrange = seq(0, 4, length = 600),
+                     a = 0.2227,
+                     b = -0.25,
+                     e = 0.85,
+                     y = 4,
+                     N0 = 1,
+                     Rrange = c(10,100),
+                     ts_runs = 20,
+                     ts_run_length = 1000,
+                     steplength = .5,
+                     output_path = "SIM_OUT/",
+                     output_filename = "weak_interactions.csv",
+                     noC = 12)
+}) # ~ 2-3 min with AMD Ryzen 6000 series laptop
 
 
 ################################################################################
@@ -85,7 +115,7 @@ create_fig01B(save_output = F)
 create_fig01C(save_output = F)
 create_fig01D(save_output = F)
 create_fig01E(save_output = F)
-
+create_fig01F(save_output = F)
 dev.off()
 
-
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")

@@ -26,16 +26,16 @@
 # (Keitt 2007) is required to run the function.
 #
 # Arguments:
-# qrange:          a vector with all q-values to be simulated (default = seq(0, 4, length = 4001)
+# qrange:          a vector with all q-values to be simulated (default = seq(0, 4, length = 201)
 # a:               the allometric constant (default = 0.2227; see Otto et al. 2008)
 # b:               the allometric exponent (default = -0.25; see Otto et al. 2008)
 # e:               the assimilation efficiency (default = 0.85; see Otto et al. 2008)
 # y:               the relative maximum feeding rate (default = 8; see Otto et al. 2008)
 # N0:              the half saturation rate (default = 0.5; see Otto et al. 2008)
 # R:               the body mass ratio (default = c(10, 100))
-# ts_runs:         the number of sequential simulation runs adding up to on time series (default = 20)
-# ts_run_length:   the length of one separated simulation from all runs adding up to one time series (default = 1000)
-# steplength:      the explicit times steps that will be simulated (default = .5)
+# ts_runs:         the number of sequential simulation runs adding up to on time series (default = 10)
+# ts_run_length:   the length of one separated simulation from all runs adding up to one time series (default = 500)
+# steplength:      the explicit times steps that will be simulated (default = 1)
 # output_path:     the (sub-)path were the output files should be saved to (default = "SIM_OUT/")
 # output_filename: the name of the output file (default = "strong_interactions.csv")
 # create_csv:      logical: should a csv be written to teh hard-drive? (default = T)
@@ -55,16 +55,16 @@
 # Williams and Martinez (2004): Stabilization of chaotic and non-permanent food-web dynamics. Eur Phys J B 38: 297-303; https://doi.org10.1140/epjb/e2004-00122-1.
 #
 
-run_foodweb_sim <- function(qrange = seq(0, 4, length = 4001),
+run_foodweb_sim <- function(qrange = seq(0, 4, length = 201),
                             a = 0.2227,
                             b = -0.25,
                             e = 0.85,
                             y = 8,
                             N0 = .5,
                             Rrange = c(10,100),
-                            ts_runs = 20,
-                            ts_run_length = 1000,
-                            steplength = .5,
+                            ts_runs = 10,
+                            ts_run_length = 500,
+                            steplength = 1,
                             output_path = "SIM_OUT/",
                             output_filename = "strong_interactions.csv",
                             create_csv = T,

@@ -28,15 +28,15 @@
 # the code in parallel.
 #
 # Arguments:
-# qrange:      a vector with all q-values to be simulated (default = seq(0, .2, length = 2000)
-# ts_length:   the length of each time series to be simulated (default = 200000)
-# steplength:  the explicit times steps that will be simulated (default = .5)
-# analyze_ts:  the percentage of the time series that should be analyzed (e.g.
-#              the last 5 %) (default = 0.05; between 0 and 1)
+# qrange:      A vector with all q-values to be simulated (default = seq(0, .2, length = 501)
+# ts_length:   The length of each time series to be simulated (default = 100000)
+# steplength:  The explicit times steps that will be simulated (default = .5)
+# analyze_ts:  The percentage of the time series that should be analyzed (e.g.
+#              The last 5 %) (default = 0.05; between 0 and 1)
+# unique_out:  Should double entries within one q value be deleted? (default = T),
+# max_out:     Number of different extrema to be saved (default = 20; 0 == All are save),
 # output_path: the (sub-)path were the output files should be saved to (default = "SIM_OUT/")
 # noC:         the number of threads that should be used for parallel computing (default to all possible threads)
-# 
-# The default settings are as used in Kalinkat et al. (under review).
 # 
 # Requirements:
 # Compilation of the food chain model (run compile_foodchain())
@@ -54,9 +54,9 @@
 # Williams and Martinez (2004): Stabilization of chaotic and non-permanent food-web dynamics. Eur Phys J B 38: 297-303; https://doi.org10.1140/epjb/e2004-00122-1.
 #
 
-run_foodchain_sim_mt <- function(qrange = seq(0, .2, length = 2001),
-                                 ts_length = 200000,
-                                 steplength = .1,
+run_foodchain_sim_mt <- function(qrange = seq(0, .2, length = 501),
+                                 ts_length = 100000,
+                                 steplength = .5,
                                  analyze_ts = 0.05,
                                  unique_out = T,
                                  max_out = 20,

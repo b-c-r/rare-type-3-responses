@@ -23,13 +23,13 @@
 # et al. (under review) for further methodology description.
 #
 # Arguments:
-# a:  the allometric constant (default = 0.2227; see Otto et al. 2008)
-# b:  the allometric exponent (default = -0.25; see Otto et al. 2008)
-# e:  the assimilation efficiency (default = 0.85; see Otto et al. 2008)
-# y:  the relative maximum feeding rate (default = 8; see Otto et al. 2008)
-# N0: the half saturation rate (default = 0.5; see Otto et al. 2008)
-# q:  the shaping exponent (default = 0; see Williams and Martinez 2004)
-# R:  the range of body mass ratios allowed for each species (default = c(10, 100))
+# a:      The allometric constant (default = 0.2227; see Otto et al. 2008)
+# b:      The allometric exponent (default = -0.25; see Otto et al. 2008)
+# e:      The assimilation efficiency (default = 0.85; see Otto et al. 2008)
+# y:      The relative maximum feeding rate (default = 8; see Otto et al. 2008)
+# N0:     The half saturation rate (default = 0.5; see Otto et al. 2008)
+# q:      The shaping exponent (default = 0; see Williams and Martinez 2004)
+# Rrange: The range of body mass ratios allowed for each species (default = c(10, 100))
 # 
 # Requirements:
 # Compilation of the foodweb model (run compile_foodweb())

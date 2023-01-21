@@ -1,5 +1,5 @@
 ################################################################################
-#    Function "create_fig01D" to create Figure 01 (B) from                     #
+#    Function "create_fig01D" to create Figure 01 (A) from                     #
 #        Kalinkat et al. (under review)                                        #
 #    Copyright (C) 2023 Björn C. Rall                                          #
 #                                                                              #
@@ -18,7 +18,7 @@
 ################################################################################
 
 # Description:
-# The function creates Figure 1(B) from Kalinkat et al. (under review)
+# The function creates Figure 1(A) from Kalinkat et al. (under review)
 #
 # Arguments:
 # N:     The resource densities (positive vector)

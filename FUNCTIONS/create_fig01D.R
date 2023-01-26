@@ -18,7 +18,9 @@
 ################################################################################
 
 # Description:
-# The function creates Figure 1(D) from Kalinkat et al. (under review)
+# The function creates Figure 1(D) from Kalinkat et al. (under review). The
+# plot shows the behavior of the generalized or theta-sigmoid functional
+# response (Real 1977; Okuyama and Ruyle 2011; Vucic‐Pestic et al. 2010).
 #
 # Arguments:
 # N:     The resource densities (positive vector)
@@ -36,7 +38,10 @@
 # 
 # References
 # Kalinkat et al. (under review): Empirical evidence of type III functional responses and why it remains rare.
-# 
+# Okuyama and Ruyle (2011): Solutions for functional response experiments. Acta Oecol 37: 512–16. https://doi.org/10.1016/j.actao.2011.07.002
+# Real (1977): The kinetics of functional response. Am Nat 111: 289–300. https://doi.org/10.1086/283161
+# Vucic‐Pestic et al. (2010): Allometric functional response model: body masses constrain interaction strengths. J Anim Ecoy 79: 249–56. https://doi.org/10.1111/j.1365-2656.2009.01622.x
+#
 
 create_fig01D <- function(N = seq(0, 20, length=1000),
                           Fmax = 10,

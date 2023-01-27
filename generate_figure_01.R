@@ -55,7 +55,7 @@ system.time({
                        max_out = 0,                                             # saves all extrema, leads to large out files (each >6MB)
                        output_path = "SIM_OUT/",
                        noC = 12)
-}) # ~ 4-5min with AMD Ryzen 6000 series laptop
+}) # ~ 4-7min with AMD Ryzen 6000 series laptop
 
 ## run the food web simulations for the strong interactions biodiversity diagram
 system.time({
@@ -72,7 +72,7 @@ system.time({
                      output_path = "SIM_OUT/",
                      output_filename = "strong_interactions.csv",
                      noC = 12)
-}) # ~ 10-11 min with AMD Ryzen 6000 series laptop
+}) # ~ 9-11 min with AMD Ryzen 6000 series laptop
 
 ## run the food web simulations for the weak interactions biodiversity diagram
 system.time({
@@ -112,7 +112,7 @@ par(mfrow = c(2,3),
 ## create the figure
 create_fig01A(save_output = F)
 create_fig01B(save_output = F)
-create_fig01C(save_output = F)
+create_fig01C_alt(save_output = F)
 create_fig01D(save_output = F)
 create_fig01E(save_output = F)
 create_fig01F(save_output = F)

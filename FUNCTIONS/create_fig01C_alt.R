@@ -68,10 +68,11 @@ create_fig01C_alt <- function(N = seq(0, 20, length=1000),
        type = "l",
        ylim = ylims,
        xlab = "resource density",
-       ylab = "feeding rate / predation risk"
+       ylab = "feeding rate / predation risk",
+       lwd = 3
   )
-  lines(N[N<Nlow], out[N<Nlow,2], col = "orange", lty = 2, lwd = 2)
-  lines(N[N>Nhigh], out[N>Nhigh,2], col = "red", lty = 2, lwd = 3)
+  lines(N[N<Nlow], out[N<Nlow,2], col = "orange", lty = 1, lwd = 1)
+  lines(N[N>Nhigh], out[N>Nhigh,2], col = "red", lty = 1, lwd = 1)
   
   lines(N, out[,2]/N, col = "darkgrey")
   
@@ -83,17 +84,17 @@ create_fig01C_alt <- function(N = seq(0, 20, length=1000),
                     "Type III pred. risk",
                     "often absent in laboratory",
                     "often absent in field",
-                    "resulting type I with missing data",
-                    "resulting type 0 with missing data"),
+                    "resulting Type I with missing data",
+                    "resulting Type 0 with missing data"),
          col = c("black",
                  "darkgrey",
                  "orange",
                  "red",
-                 "lightblue",
-                 "blue"),
-         lty = c(1,1,2,3,4,4),
-         lwd = c(1,1,2,2,3,3),
-         cex = 0.75)
+                 "blue",
+                 "yellow"),
+         lty = c(1,1,1,1,6,2),
+         lwd = c(1,1,1,1,1,1),
+         cex = 0.6)
   
   ##############################################################################
   # THIS IS NOT A REAL FIT - ONLY TO SHOW THE PATTERN!!!!
@@ -113,18 +114,18 @@ create_fig01C_alt <- function(N = seq(0, 20, length=1000),
   ##############################################################################
   
   # constructing the H1.
-  N4 <- N3[N3<coef(m3)[]/coef(m2)[]]                                            ## increasing part of H1, above H0 with field ranges
+  N4 <- unique(sort(c(N2, N3[N3<coef(m3)[]/coef(m2)[]])))                       ## increasing part of H1, above H0 with field ranges
   N5 <- N3[N3>coef(m3)[]/coef(m2)[]]                                            ## saturating part of H1
   
   ## draw the lines
-  lines(N2, predict(m2), col="blue", lwd = 3, lty = 4)                          # for plotting H0, the field situation
-  lines(N4, predict(m2, newdata = list(N2 = N4)), col="lightblue",
-          lwd = 3, lty = 4)                                                     # for plotting H1, increasing part
-  lines(N5, rep(coef(m3)[], length(N5)), col="lightblue",
-          lwd = 3, lty = 4)                                                     # for plotting H1, saturating part
+  lines(N4, predict(m2, newdata = list(N2 = N4)), col="blue",
+          lwd = 1, lty = 6)                                                     # for plotting H1, increasing part
+  lines(N5, rep(coef(m3)[], length(N5)), col="blue",
+          lwd = 1, lty = 6)                                                     # for plotting H1, saturating part
+  lines(N2, predict(m2), col="yellow", lwd = 1, lty = 2)                        # for plotting H0, the field situation
   
   # re-draw the actual H3 for better contrast
-  lines(N, out[,2])
+  #lines(N, out[,2])
   
   if(save_output) {dev.off()}
   

@@ -1,5 +1,5 @@
 ################################################################################
-#    Function "create_fig01D" to create Figure 01 (C) from                     #
+#    Function "create_fig01C" to create Figure 01 (C) from                     #
 #        Kalinkat et al. (under review)                                        #
 #    Copyright (C) 2023 Björn C. Rall                                          #
 #                                                                              #

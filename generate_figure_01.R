@@ -1,6 +1,6 @@
 ################################################################################
-#    Script to simulate the data for a bifurcation diagram of a                #
-#    3-species food chain across a gradient of q-values                        #
+#    Script for creating figure 1 for "Empirical evidence of type III          #
+#    functional responses and why it remains rare"                             #
 #                                                                              #
 #    Copyright (C) 2023 Björn C. Rall                                          #
 #                                                                              #

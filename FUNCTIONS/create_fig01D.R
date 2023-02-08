@@ -1,7 +1,7 @@
 ################################################################################
-#    Function "create_fig01D" to create Figure 01 (D) from                     #
-#        Kalinkat et al. (under review)                                        #
-#    Copyright (C) 2023 Björn C. Rall                                          #
+#    Function "create_fig01D" to create Figure 01D for Kalinkat et al. (2023)  #
+#                                                                              #
+#    Copyright (C) 2023 Björn C. Rall (b-c-r@mailbox.org)                      #
 #                                                                              #
 #    This program is free software: you can redistribute it and/or modify      #
 #    it under the terms of the GNU General Public License as published by      #
@@ -18,9 +18,10 @@
 ################################################################################
 
 # Description:
-# The function creates Figure 1(D) from Kalinkat et al. (under review). The
+# The function creates Figure 1(D) from Kalinkat et al. (2023). The
 # plot shows the behavior of the generalized or theta-sigmoid functional
-# response (Real 1977; Okuyama and Ruyle 2011; Vucic‐Pestic et al. 2010).
+# response (Real 1977; Okuyama and Ruyle 2011; Vucic‐Pestic et al. 2010). See
+# also Rall et al. (2023) for details.
 #
 # Arguments:
 # N:     The resource densities (positive vector)
@@ -31,14 +32,13 @@
 # output_path: the (sub-)path were the output files should be saved to (default = "FIG_OUT/")
 # save_output: Logical (T/F). Should the output be saved as pdf?
 # 
-# The default settings are as used in Kalinkat et al. (under review).
-# 
 # Requirements:
 # Calls the function calc_gen_fr()
 # 
 # References
-# Kalinkat et al. (under review): Empirical evidence of type III functional responses and why it remains rare.
+# Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
 # Okuyama and Ruyle (2011): Solutions for functional response experiments. Acta Oecol 37: 512–16. https://doi.org/10.1016/j.actao.2011.07.002
+# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 # Real (1977): The kinetics of functional response. Am Nat 111: 289–300. https://doi.org/10.1086/283161
 # Vucic‐Pestic et al. (2010): Allometric functional response model: body masses constrain interaction strengths. J Anim Ecoy 79: 249–56. https://doi.org/10.1111/j.1365-2656.2009.01622.x
 #
@@ -51,6 +51,7 @@ create_fig01D <- function(N = seq(0, 20, length=1000),
                           output_path = "FIG_OUT/",
                           save_output = T){
   
+  ## check if the output folder exists, if not create it:
   if(!dir.exists(output_path)){
     dir.create(output_path)
     warning("The output path does not exist - I'll create it for you.")

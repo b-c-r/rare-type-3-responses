@@ -1,7 +1,7 @@
 ################################################################################
 #    Function "set_foodweb_parms" to set values for a 10-species food web      #
 #                                                                              #
-#    Copyright (C) 2023 Björn C. Rall                                          #
+#    Copyright (C) 2023 Björn C. Rall (b-c-r@mailbox.org)                      #
 #                                                                              #
 #    This program is free software: you can redistribute it and/or modify      #
 #    it under the terms of the GNU General Public License as published by      #

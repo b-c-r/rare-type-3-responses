@@ -45,7 +45,11 @@
 # Compilation of the foodweb model (run compile_foodweb()) and the function
 # "run_foodchain_sim()" that is called here.
 # Needs the package odeintr (https://CRAN.R-project.org/package=odeintr, Keitt 2017)
-# 
+# Needs the package parallel
+# Needs the package foreach (https://CRAN.R-project.org/package=foreach)
+# Needs the package iterators (https://CRAN.R-project.org/package=iterators)
+# Needs the package doParallel (https://CRAN.R-project.org/package=doParallel)
+#
 # References
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
 # Keitt (2017): odeintr: C++ ODE Solvers Compiled on-Demand, 1.71; https://CRAN.R-project.org/package=odeintr

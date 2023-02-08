@@ -1,6 +1,7 @@
 ################################################################################
 #    Function "compile_foodweb" to compile a 10-species food web               #
-#    Copyright (C) 2023 Björn C. Rall                                          #
+#                                                                              #
+#    Copyright (C) 2023 Björn C. Rall (b-c-r@mailbox.org)                      #
 #                                                                              #
 #    This program is free software: you can redistribute it and/or modify      #
 #    it under the terms of the GNU General Public License as published by      #
@@ -20,9 +21,9 @@
 # The function compiles the code for a 10-species food chain (Williams and
 # Martinez, 2004) with some adaptations to the current question. The
 # model will be compiled in C using odeintr (Keitt 2017). Please read the
-# methodology in the supplement to the paper by Kalinkat et al. (under
-# review) and Williams and Martinez (2004) for model details. Please consult the
-# help file of odeintr (?odeintr::compile_sys) for the use of this specific
+# methodology in the supplement to the paper by Kalinkat et al. (2023), Rall et
+# al. (2023) and Williams and Martinez (2004) for model details. Please consult
+# the help file of odeintr (?odeintr::compile_sys) for the use of this specific
 # function.
 #
 # Model parameters:
@@ -41,10 +42,11 @@
 # Needs the package odeintr (https://CRAN.R-project.org/package=odeintr)
 # 
 # References
-# Kalinkat et al. (under review): Empirical evidence of type III functional responses and why it remains rare.
-# Keitt (2007): odeintr: C++ ODE Solvers Compiled on-Demand, 1.71, https://CRAN.R-project.org/package=odeintr
-# Otto et al. (2007): Allometric degree distributions facilitate food-web stability. Nature 450: 1226-1229; https://doi.org/10.1038/nature06359.
-# Williams and Martinez (2004): Stabilization of chaotic and non-permanent food-web dynamics. Eur Phys J B 38: 297-303; https://doi.org10.1140/epjb/e2004-00122-1.
+# Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
+# Keitt (2017): odeintr: C++ ODE Solvers Compiled on-Demand, 1.71; https://CRAN.R-project.org/package=odeintr
+# Otto et al. (2007): Allometric degree distributions facilitate food-web stability. Nature 450: 1226-1229; https://doi.org/10.1038/nature06359
+# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Williams and Martinez (2004): Stabilization of chaotic and non-permanent food-web dynamics. Eur Phys J B 38: 297-303; https://doi.org10.1140/epjb/e2004-00122-1
 #
 
 compile_foodweb <- function(){
@@ -122,9 +124,9 @@ compile_foodweb <- function(){
                        "y",
                        "N0",
                        "q"),
-              method = "rk54_a",
-              atol = 1e-12,
-              rtol = 1e-12)
+              method = "rk54_a",                                                # can compute adaptive time steps if required
+              atol = 1e-12,                                                     # for more precise time series
+              rtol = 1e-12)                                                     # for more precise time series
 }
 
 

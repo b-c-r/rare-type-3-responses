@@ -39,7 +39,7 @@
 # output_path:     The (sub-)path were the output files should be saved to (default = "SIM_OUT/")
 # output_filename: The name of the output file (default = "strong_interactions.csv")
 # noC:             The number of threads that should be used (default to 3/4 of all possible threads)
-#                  NOTE: if you want to run the code on a single core use the function run_foodchain_sim()
+#                  NOTE: if you want to run the code on a single core use the function run_foodweb_sim()
 # 
 # Requirements:
 # Compilation of the foodweb model (run compile_foodweb()) and the function

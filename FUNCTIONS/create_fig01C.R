@@ -41,14 +41,14 @@
 # Sarnelle and Wilson (2008): Type III functional response in Daphnia. Ecology 89: 1723-1732; https://doi.org/10.1890/07-0935.1
 #
 
-create_fig01C_alt <- function(N = seq(0, 20, length=1000),
-                              Fmax = 10,
-                              N0 = 10/3,
-                              ylims = c(0,15),
-                              Nlow = 2,
-                              Nhigh = 5,
-                              output_path = "FIG_OUT/",
-                              save_output = T){
+create_fig01C <- function(N = seq(0, 20, length=1000),
+                          Fmax = 10,
+                          N0 = 10/3,
+                          ylims = c(0,15),
+                          Nlow = 2,
+                          Nhigh = 5,
+                          output_path = "FIG_OUT/",
+                          save_output = T){
   
   ## check if the output folder exists, if not create it:
   if(!dir.exists(output_path)){

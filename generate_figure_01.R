@@ -68,7 +68,7 @@ system.time({
                        unique_out = T,                                          # only unique extrema should be saved
                        max_out = 0,                                             # saves all extrema, leads to large out files (each >6MB)
                        output_path = "SIM_OUT/",                                # saves the output files in "SIM_OUt/" - will be generated if not existing
-                       noC = 16)                                                # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
+                       noC = 12)                                                # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
 })
 
 ## run the food web simulations for the strong interactions biodiversity diagram
@@ -86,7 +86,7 @@ system.time({
                      steplength = .5,                                           # the steplength-length. Here 2000 steps of length of 0.5 create 1000 time steps.
                      output_path = "SIM_OUT/",                                  # saves the output files in "SIM_OUt/" - will be generated if not existing
                      output_filename = "strong_interactions.csv",               # output file name
-                     noC = 16)                                                  # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
+                     noC = 12)                                                  # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
 })
 
 ## run the food web simulations for the weak interactions biodiversity diagram
@@ -104,7 +104,7 @@ system.time({
                      steplength = .5,                                           # the steplength-length. Here 2000 steps of length of 0.5 create 1000 time steps.
                      output_path = "SIM_OUT/",                                  # saves the output files in "SIM_OUt/" - will be generated if not existing
                      output_filename = "weak_interactions.csv",                 # output file name
-                     noC = 16)                                                  # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
+                     noC = 12)                                                  # Number of cores that should be used. Use parallel::detectCores() to see how many threads you have. Consider to not use all if you need your computer in the meanwhile.
 })
 
 

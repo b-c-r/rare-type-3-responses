@@ -81,7 +81,7 @@ system.time({
                      y = 8,                                                     # the relative maximum feeding rate
                      N0 = .5,                                                   # the half saturation density
                      Rrange = c(10,100),                                        # the range of (average) body mass ratios a consumer species in the food web can have
-                     ts_runs = 20,                                              # number of sub-timeseries that shoudl be analyzed. 
+                     ts_runs = 20,                                              # number of sub-timeseries that should be analyzed. 
                      ts_run_length = 1000,                                      # total length of each sub-timeseries. e.g. 20 sub-timeseries with each 1000 time-steps sum up to a 20,000 timesteps timeseries.
                      steplength = .5,                                           # the steplength-length. Here 2000 steps of length of 0.5 create 1000 time steps.
                      output_path = "SIM_OUT/",                                  # saves the output files in "SIM_OUt/" - will be generated if not existing
@@ -99,7 +99,7 @@ system.time({
                      y = 4,                                                     # the relative maximum feeding rate
                      N0 = 1,                                                    # the half saturation density
                      Rrange = c(10,100),                                        # the range of (average) body mass ratios a consumer species in the food web can have
-                     ts_runs = 20,                                              # number of sub-timeseries that shoudl be analyzed. 
+                     ts_runs = 20,                                              # number of sub-timeseries that should be analyzed. 
                      ts_run_length = 1000,                                      # saves the output files in "SIM_OUt/" - will be generated if not existing
                      steplength = .5,                                           # the steplength-length. Here 2000 steps of length of 0.5 create 1000 time steps.
                      output_path = "SIM_OUT/",                                  # saves the output files in "SIM_OUt/" - will be generated if not existing

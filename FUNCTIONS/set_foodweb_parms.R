@@ -18,17 +18,18 @@
 ################################################################################
 
 # Description:
-# The function sets the parameter values for the compiled foodweb. 
-# You need to execute compile_foodweb() first! See the description of
-# compile_foodweb() for the model. See also Kalinkat et al. (2023), Rall et
-# al. (2023), and references below for further description.
+# The function sets the parameter values for the compiled foodweb. See the
+# description of the odeintr package (Keitt 2017) for details how to apply
+# such functions. You need to execute compile_foodweb() first! See also the 
+# description in compile_foodweb.R for the model. See Kalinkat et al. (2023),
+# Rall et al. (2023), and references below for further description.
 #
 # Arguments:
-# a:      The allometric constant (default = 0.2227; see Otto et al. 2008)
-# b:      The allometric exponent (default = -0.25; see Otto et al. 2008)
-# e:      The assimilation efficiency (default = 0.85; see Otto et al. 2008)
-# y:      The relative maximum feeding rate (default = 8; see Otto et al. 2008)
-# N0:     The half saturation rate (default = 0.5; see Otto et al. 2008)
+# a:      The allometric constant (default = 0.2227; see Otto et al. 2007)
+# b:      The allometric exponent (default = -0.25; see Otto et al. 2007)
+# e:      The assimilation efficiency (default = 0.85; see Otto et al. 2007)
+# y:      The relative maximum feeding rate (default = 8; see Otto et al. 2007)
+# N0:     The half saturation rate (default = 0.5; see Otto et al. 2007)
 # q:      The shaping exponent (default = 0; see Williams and Martinez 2004)
 # Rrange: The range of body mass ratios allowed for each species (default = c(10, 100))
 # 
@@ -38,7 +39,7 @@
 # 
 # References
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11. https://doi.org/10.3389/fevo.2023.1033818
-# Keitt (2007): odeintr: C++ ODE Solvers Compiled on-Demand, 1.71; https://CRAN.R-project.org/package=odeintr
+# Keitt (2017): odeintr: C++ ODE Solvers Compiled on-Demand, 1.71; https://CRAN.R-project.org/package=odeintr
 # Otto et al. (2007): Allometric degree distributions facilitate food-web stability. Nature 450: 1226-1229; https://doi.org/10.1038/nature06359.
 # Rall et al. (2008): Food-web connectance and predator interference dampen the paradox of enrichment; Oikos 117: 202-213; https://doi.org/10.1111/j.2007.0030-1299.15491.x
 # Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822

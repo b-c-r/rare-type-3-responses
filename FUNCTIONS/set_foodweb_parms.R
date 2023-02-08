@@ -74,7 +74,7 @@ set_foodweb_parms <- function(a = 0.2227,
   }
   
   ## set parameter values:
-  foodweb_set_params(m2 = a * Rs[3]^b,
+  foodweb_set_params(m2 = a * Rs[3]^b,                                          ## calculation of the metabolic rates (see Rall et al. 2023)
                      m3 = a * Rs[4]^b,
                      m4 = a * Rs[5]^b,
                      m5 = a * Rs[6]^b,

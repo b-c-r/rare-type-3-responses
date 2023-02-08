@@ -1,6 +1,7 @@
 ################################################################################
 #    Function "minmax" to calculate all possible extrema in a time series      #
-#    Copyright (C) 2023 Björn C. Rall                                          #
+#                                                                              #
+#    Copyright (C) 2023 Björn C. Rall (b-c-r@mailbox.org)                      #
 #                                                                              #
 #    This program is free software: you can redistribute it and/or modify      #
 #    it under the terms of the GNU General Public License as published by      #

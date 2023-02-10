@@ -9,7 +9,7 @@
 
 **ORCID:** [0000-0002-3191-8389](https://orcid.org/0000-0002-3191-8389)
 
-**Contact:** [b-c-r@mailbox.org](mailto: b-c-r@mailbox.org)
+**Contact:** b-c-r@mailbox.org
 
 **Related sources:**
 

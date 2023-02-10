@@ -28,7 +28,7 @@ To generate figure 1 from the publication (Kalinkat et al. 2023), run the script
 
 Kalinkat G, Rall BC, Uiterwaal S, Uszko W (2023) Empirical evidence of type III functional responses and why it remains rare. Frontiers in Ecology and Evolution 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818 
 
-Rall BC (2023) Rare type III functional responses (Code). https://doi.org/10.5281/zenodo.7557472 
+Rall BC (2023) Rare type III functional responses: Code. Zenodo. https://doi.org/10.5281/zenodo.7557472 
 
 Rall BC, Kalinkat G, Uiterwaal S, Uszko W (2023) Rare type III responses: code and modeling methods. Zenodo. https://doi.org/10.5281/zenodo.7573616 
 

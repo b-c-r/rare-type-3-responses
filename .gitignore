@@ -39,6 +39,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# Paths and files within these paths
+/Rdev/
+
 # Output Files
 *.pdf
 *.html

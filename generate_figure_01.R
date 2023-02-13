@@ -114,7 +114,7 @@ system.time({
 
 ## pdf setup
 dir.create("FIG_OUT/")                                                          # creates an empty directory for the output pdf
-pdf(file = "FIG_OUT/Figure01_alt.pdf",
+pdf(file = "FIG_OUT/Figure01.pdf",
     width = 6,
     height = 7.5,
     title = "Figure 1: Rare Type III Responses")                                # pdf settings, see ?pdf for details

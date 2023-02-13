@@ -36,7 +36,7 @@
 # References
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
 # Okuyama & Ruyle (2011):Solutions for functional response experiments. Acta Oecologia 37: 512-516. https://doi.org/10.1016/j.actao.2011.07.002
-# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Rall et al. (2023): Rare type III responses: methods for code and simulation models (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 # Real (1977): The kinetics of functional response. Am Nat 111: 289-300. https://doi.org/10.1086/283161
 # Vucic-Pestic et al. (2010): Allometric functional response model: body masses constrain interaction strengths. J Anim Ecol: 79: 249-256. https://doi.org/10.1111/j.1365-2656.2009.01622.x
 #

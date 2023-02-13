@@ -26,7 +26,7 @@
 # more details on the methodology see Rall et al. (2023).
 #
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
-# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Rall et al. (2023): Rare type III responses: methods for code and simulation models (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 #
 
 ################################################################################
@@ -114,13 +114,13 @@ system.time({
 
 ## pdf setup
 dir.create("FIG_OUT/")                                                          # creates an empty directory for the output pdf
-pdf(file = "FIG_OUT/Figure01.pdf",
-    width = 7,
-    height = 4.8,
+pdf(file = "FIG_OUT/Figure01_alt.pdf",
+    width = 6,
+    height = 7.5,
     title = "Figure 1: Rare Type III Responses")                                # pdf settings, see ?pdf for details
 
 ## Graphical settings
-par(mfrow = c(2,3),
+par(mfrow = c(3,2),
     oma = c(.1,.1,.1,.1),
     mar = c(4,4,.5,.5),
     las = 1)                                                                    # graphical settings to create a nice 2*3 ploting area

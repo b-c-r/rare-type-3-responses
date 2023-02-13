@@ -33,7 +33,7 @@
 # 
 # References
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
-# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Rall et al. (2023): Rare type III responses: methods for code and simulation models (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 # Wood (2022): mgcv: mixed gam computation vehicle with automatic smoothness estimation (1.8-41). https://CRAN.R-project.org/package=mgcv
 # 
 

@@ -34,7 +34,7 @@
 # 
 # References
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
-# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Rall et al. (2023): Rare type III responses: methods for code and simulation models (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 # 
 
 create_fig01B <- function(N = seq(0, 20, length=1000),
@@ -63,18 +63,19 @@ create_fig01B <- function(N = seq(0, 20, length=1000),
        type = "l",
        ylim = ylims,
        xlab = "resource density",
-       ylab = "feeding rate / predation risk"
+       ylab = "feeding rate / predation risk",
+       col = "grey"
   )
   
-  lines(N, out[,2]/N, col = "darkgrey")
+  lines(N, out[,2]/N, col = "black")
   mtext("(B)",
         line = -1.5,
         adj = 0.05)
   legend("topright",
          legend = c("Type II feeding rate",
                     "Type II pred. risk"),
-         col = c("black",
-                        "darkgrey"),
+         col = c("grey",
+                        "black"),
                         lty = c(1,1),
          cex = 0.75)
   

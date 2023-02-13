@@ -37,7 +37,7 @@
 # References
 # Coblentz et al. (2022): Predator feeding rates may often be unsaturated under typical prey densities. Ecol Lett 00: 1-11; https://doi.org/10.1111/ele.14151
 # Kalinkat et al. (2023): Empirical evidence of type III functional responses and why it remains rare. Front Ecol Evol 11: 1033818. https://doi.org/10.3389/fevo.2023.1033818
-# Rall et al. (2023): Rare type III responses: Code & modelling methods (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
+# Rall et al. (2023): Rare type III responses: methods for code and simulation models (v1.0.0). Zenodo; https://doi.org/10.5281/zenodo.7619822
 # Sarnelle and Wilson (2008): Type III functional response in Daphnia. Ecology 89: 1723-1732; https://doi.org/10.1890/07-0935.1
 #
 
@@ -70,12 +70,13 @@ create_fig01C <- function(N = seq(0, 20, length=1000),
        ylim = ylims,
        xlab = "resource density",
        ylab = "feeding rate / predation risk",
-       lwd = 3
+       lwd = 4,
+       col = "grey"
   )
   lines(N[N<Nlow], out[N<Nlow,2], col = "orange", lty = 1, lwd = 1)
   lines(N[N>Nhigh], out[N>Nhigh,2], col = "red", lty = 1, lwd = 1)
   
-  lines(N, out[,2]/N, col = "darkgrey")
+  lines(N, out[,2]/N, col = "black")
   
   mtext("(C)",
         line = -1.5,
@@ -87,12 +88,12 @@ create_fig01C <- function(N = seq(0, 20, length=1000),
                     "often absent in field",
                     "resulting Type I with missing data",
                     "resulting Type 0 with missing data"),
-         col = c("black",
-                 "darkgrey",
+         col = c("grey",
+                 "black",
                  "orange",
                  "red",
                  "blue",
-                 "yellow"),
+                 "magenta1"),
          lty = c(1,1,1,1,6,2),
          lwd = c(1,1,1,1,1,1),
          cex = 0.6)
@@ -119,14 +120,15 @@ create_fig01C <- function(N = seq(0, 20, length=1000),
   N5 <- N3[N3>coef(m3)[]/coef(m2)[]]                                            ## saturating part of H1
   
   ## draw the lines
-  lines(N4, predict(m2, newdata = list(N2 = N4)), col="blue",
+  lines(c(0, N4)+0.15, predict(m2, newdata = list(N2 = c(0, N4))), col="blue",
           lwd = 1, lty = 6)                                                     # for plotting H1, increasing part
-  lines(N5, rep(coef(m3)[], length(N5)), col="blue",
+  lines(N5+0.15, rep(coef(m3)[], length(N5)), col="blue",
           lwd = 1, lty = 6)                                                     # for plotting H1, saturating part
-  lines(N2, predict(m2), col="yellow", lwd = 1, lty = 2)                        # for plotting H0, the field situation
+  lines(c(0, N4)-0.15, predict(m2, newdata = list(N2 = c(0, N4))),
+        col="magenta1", lwd = 1, lty = 2)                                         # for plotting H0, the field situation
   
   # re-draw the actual H3 for better contrast
-  #lines(N, out[,2])
+  # lines(N, out[,2])
   
   if(save_output) {dev.off()}
   
